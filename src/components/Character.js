@@ -67,6 +67,7 @@ export default function Character(props){
           setAction([e.key, false])
         })
         document.addEventListener('mousemove', (e) => {
+          setFaceRotation(-((e.clientX / window.innerWidth) * 2 - 1) * 3)
           setMouse({
             x : (e.clientX / window.innerWidth) * 2 - 1,
             y : -(e.clientY / window.innerHeight) * 2 + 1
@@ -137,18 +138,18 @@ export default function Character(props){
               }, 820)
           }
 
-          if (mouse?.x < -0.9) setFaceRotation(faceRotation + 0.080)
-          if (mouse?.x > 0.9) setFaceRotation(faceRotation - 0.080)
-          if (mouse?.x < -0.8 && mouse?.x > -0.9 ) setFaceRotation(faceRotation + 0.060)
-          if (mouse?.x > 0.8 && mouse?.x < 0.9) setFaceRotation(faceRotation - 0.060)
-          if (mouse?.x < -0.7 && mouse?.x > -0.8) setFaceRotation(faceRotation + 0.040)
-          if (mouse?.x > 0.7 && mouse?.x < 0.8) setFaceRotation(faceRotation - 0.040)
-          if (mouse?.x < -0.6 && mouse?.x > -0.7) setFaceRotation(faceRotation + 0.030)
-          if (mouse?.x > 0.6 && mouse?.x < 0.7) setFaceRotation(faceRotation - 0.030)
-          if (mouse?.x < -0.5 && mouse?.x > -0.6) setFaceRotation(faceRotation + 0.020)
-          if (mouse?.x > 0.5 && mouse?.x < 0.6) setFaceRotation(faceRotation - 0.020)
-          if (mouse?.x < -0.4 && mouse?.x > -0.5) setFaceRotation(faceRotation + 0.010)
-          if (mouse?.x > 0.4 && mouse?.x < 0.5) setFaceRotation(faceRotation - 0.010)
+          // if (mouse?.x < -0.9) setFaceRotation(faceRotation + 0.080)
+          // if (mouse?.x > 0.9) setFaceRotation(faceRotation - 0.080)
+          // if (mouse?.x < -0.8 && mouse?.x > -0.9 ) setFaceRotation(faceRotation + 0.060)
+          // if (mouse?.x > 0.8 && mouse?.x < 0.9) setFaceRotation(faceRotation - 0.060)
+          // if (mouse?.x < -0.7 && mouse?.x > -0.8) setFaceRotation(faceRotation + 0.040)
+          // if (mouse?.x > 0.7 && mouse?.x < 0.8) setFaceRotation(faceRotation - 0.040)
+          // if (mouse?.x < -0.6 && mouse?.x > -0.7) setFaceRotation(faceRotation + 0.030)
+          // if (mouse?.x > 0.6 && mouse?.x < 0.7) setFaceRotation(faceRotation - 0.030)
+          // if (mouse?.x < -0.5 && mouse?.x > -0.6) setFaceRotation(faceRotation + 0.020)
+          // if (mouse?.x > 0.5 && mouse?.x < 0.6) setFaceRotation(faceRotation - 0.020)
+          // if (mouse?.x < -0.4 && mouse?.x > -0.5) setFaceRotation(faceRotation + 0.010)
+          // if (mouse?.x > 0.4 && mouse?.x < 0.5) setFaceRotation(faceRotation - 0.010)
 
           if (!Object.values(actions).includes(true)) setPlayingAnimation('Idle')
 
